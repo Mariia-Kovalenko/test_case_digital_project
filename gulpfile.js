@@ -14,6 +14,7 @@ import scss from "./gulp/tasks/scss.js";
 import js from "./gulp/tasks/javascript.js";
 import img from "./gulp/tasks/img.js";
 import zip from './gulp/tasks/zip.js';
+import font from "./gulp/tasks/font.js";
 
 //tracking changes
 const watcher = () =>{
@@ -21,6 +22,7 @@ const watcher = () =>{
     gulp.watch(path.scss.watch, scss).on("all", browserSync.reload);
     gulp.watch(path.js.watch, js).on("all", browserSync.reload);
     gulp.watch(path.img.watch, img).on("all", browserSync.reload);
+    gulp.watch(path.font.watch, font).on("all", browserSync.reload);
 };
 
 
@@ -37,7 +39,7 @@ const server = () => {
 //build
 const build = gulp.series(
     clear,
-    gulp.parallel(html,scss, js, img)
+    gulp.parallel(html,scss, js, img, font)
 );
 
 const dev = gulp.series(

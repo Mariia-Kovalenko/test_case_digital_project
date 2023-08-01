@@ -5,3 +5,13 @@
     justify-content: $jc;
     gap: $gap;
 }
+
+@mixin burger {
+    display: block;
+    content: '';
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    transition: 0.3s;
+    border-radius: 3px;
+}

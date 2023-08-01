@@ -16,7 +16,7 @@
   \************************/
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _module_sum_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module/sum.js */ \"./src/js/module/sum.js\");\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://gulp-starter/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _module_sum_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module/sum.js */ \"./src/js/module/sum.js\");\n\r\n\r\n\r\n\r\nconst burger = document.querySelector('.burger');\r\n\r\nburger.addEventListener('click', () => {\r\n    if (burger.classList.contains('close')) {\r\n        burger.classList.remove('close');\r\n    } else {\r\n        burger.classList.add('close');\r\n    }\r\n    \r\n})\r\n\n\n//# sourceURL=webpack://gulp-starter/./src/js/main.js?");
 
 /***/ }),
 
