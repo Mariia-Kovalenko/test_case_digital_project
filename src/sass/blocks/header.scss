@@ -1,0 +1,11 @@
+@use './mixins';
+
+header {
+    @include mixins.flex(10px, row, center, space-between)
+}
+
+.nav {
+    &__list {
+        @include mixins.flex(10px, row, center)
+    }
+}
