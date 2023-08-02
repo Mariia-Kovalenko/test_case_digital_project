@@ -57,3 +57,26 @@ button {
 body {
     font-family: 'TT Hoves', sans-serif;
 }
+
+.btn {
+    width: 220px;
+    height: 70px;
+    background-image: url(../../img/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: right 30px center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: 12px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+}
+
+.btn-dark {
+    color: white;
+    background-image: url(../../img/arrow-light.svg);
+    background-repeat: no-repeat;
+    background-position: right 30px center;
+    background-color: #333;
+}
