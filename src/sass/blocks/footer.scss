@@ -1,9 +1,8 @@
-
-@use "./mixins";
-@use "./variables";
+@use './mixins';
+@use './variables';
 
 .footer {
-    background-color: variables.$dark-grey;
+    background-color: variables.$footer-bg;
     color: white;
 
     &__section {

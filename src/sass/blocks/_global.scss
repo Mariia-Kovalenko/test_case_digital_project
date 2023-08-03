@@ -2,6 +2,7 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 ul[class],
 ol[class] {
@@ -30,7 +31,8 @@ a {
     text-decoration-skip-ink: auto;
     text-decoration: none;
 }
-img, picture {
+img,
+picture {
     max-width: 100%;
     display: block;
     vertical-align: top;
@@ -45,7 +47,7 @@ select {
 button {
     background-color: transparent;
     border: none;
-    font: inherit
+    font: inherit;
 }
 
 section {
@@ -60,7 +62,7 @@ section {
 }
 
 body {
-    font-family: 'TT Hoves', sans-serif;
+    font-family: "TT Hoves", sans-serif;
 }
 
 .btn {
@@ -76,7 +78,7 @@ body {
     font-size: 12px;
     letter-spacing: 2.4px;
     text-transform: uppercase;
-    transition: .3s;
+    transition: 0.3s;
     cursor: pointer;
 }
 
@@ -87,7 +89,6 @@ body {
     background-position: right 30px center;
 }
 
-
 .btn-dark {
     color: white;
     background-image: url(../../img/arrow-light.svg);
@@ -97,7 +98,7 @@ body {
 }
 
 .btn-dark:hover {
-    opacity: .8;
+    opacity: 0.8;
     background-image: url(../../img/arrow-light.svg);
     background-repeat: no-repeat;
     background-position: right 30px center;
@@ -106,7 +107,7 @@ body {
 
 .section-heading {
     font-size: 64px;
-    color: #BDBDBD;
+    color: #bdbdbd;
     font-weight: 300;
     margin-bottom: 20px;
 }
@@ -115,7 +116,8 @@ body {
     margin-left: auto;
 }
 
-input, textarea {
+input,
+textarea {
     display: block;
     border: none;
 
@@ -125,10 +127,45 @@ input, textarea {
 }
 textarea {
     resize: none;
-  }
-  label {
+}
+label {
     display: block;
-  }
+}
+
+.hidden {
+    transform: translateY(70px);
+    transition: all 0.7s;
+}
+
+.show {
+    transform: translateY(0px);
+}
+
+.scrolltop {
+    position: fixed;
+    bottom: 100px;
+    right: 70px;
+    z-index: 1000;
+    height: 55px;
+    width: 55px;
+    background-color: #333;
+    border-radius: 50%;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.arrow {
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #f2f2f2;
+    border-right: 2px solid #f2f2f2;
+    transform: rotate(-45deg);
+}
 
 @media screen and (max-width: 580px) {
     .btn {
@@ -137,5 +174,15 @@ textarea {
     .section-heading {
         font-size: 46px;
         text-align: center;
+    }
+    .scrolltop {
+        bottom: 70px;
+        right: 50px;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .hidden {
+        transition: none;
     }
 }

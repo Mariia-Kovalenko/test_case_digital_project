@@ -49,13 +49,6 @@
             height: 150px;
             width: 100%;
         }
-        &:focus {
-            border-color: #3a82c6;
-        }
-        &:disabled {
-            border-color: #e6e6e6;
-            background: #f9fafb;
-        }
         &[required]::placeholder {
             color: transparent;
         }
@@ -80,9 +73,7 @@
 }
 
 .checkbox {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    @include mixins.flex($gap: 10px, $ai: center);
 
     &__label {
         @include mixins.text($size: 14px, $weight: 400, $lh: normal);
@@ -99,14 +90,12 @@
         border: 1.5px solid variables.$dark-grey;
         border-radius: 0.15em;
         transform: translateY(-0.075em);
-
         display: grid;
         place-content: center;
 
         &::before {
             content: "";
-            width: 10px;
-            height: 10px;
+            @include mixins.size(10px, 10px);
             transform: scale(0);
             transition: 120ms transform ease-in-out;
             border-radius: 2px;

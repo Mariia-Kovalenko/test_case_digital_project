@@ -54,3 +54,8 @@
 @mixin absolute($args) {
     @include position(absolute, $args);
 }
+
+@mixin nav-empty-borders {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
