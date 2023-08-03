@@ -26,27 +26,29 @@
     }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
     .task__text {
         font-size: 20px;
     }
 }
 
-@media screen and (max-width: 990px){
+@media screen and (max-width: 990px) {
     .tasks__info {
         flex-direction: column;
         gap: 30px;
     }
-    .task__text {
-        max-width: 100%;
+    .task {
+        &__text {
+            max-width: 100%;
+        }
+        &__number {
+            font-size: 150px;
+        }
     }
 }
 
 @media screen and (max-width: 768px) {
     .task {
-        &__number {
-            font-size: 150px;
-        }
         &__text {
             font-size: 18px;
         }

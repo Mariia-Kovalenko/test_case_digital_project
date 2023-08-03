@@ -3,7 +3,7 @@
 
 .intro {
     position: relative;
-    @include mixins.flex($jc: space-between);
+    @include mixins.flex($ai: stretch, $jc: space-between);
     z-index: 1;
 
     &__title {
@@ -103,8 +103,8 @@
         gap: 20px;
 
         &__inner {
-            padding-top: 35px;
             gap: 30px;
+            width: 100%;
             align-items: center;
         }
     }
