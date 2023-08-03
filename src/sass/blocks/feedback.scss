@@ -1,0 +1,139 @@
+@use "./mixins";
+@use "./variables";
+
+.feedback {
+    &__inputs {
+        @include mixins.flex($gap: 10px, $direction: column);
+        flex-grow: 1;
+    }
+
+    &__inner {
+        @include mixins.flex($gap: 20px, $direction: row, $ai: stretch, $jc: space-between);
+        height: max-content;
+    }
+
+    &__image img {
+        @include mixins.image;
+        height: 370px;
+    }
+}
+
+.textfield {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 390px;
+    &__label {
+        @include mixins.absolute(top 12px left 15px);
+        display: block;
+        font-size: 14px;
+        color: variables.$input-text;
+        user-select: none;
+        cursor: text;
+        &::after {
+            position: relative;
+            top: -3px;
+            left: 1px;
+            display: inline-block;
+            content: "*";
+            color: #d0011b;
+        }
+    }
+    &__input {
+        background-color: variables.$input-bg;
+        padding: 14px;
+        display: block;
+        @include mixins.size(100%, 45px);
+        &.textarea {
+            height: 150px;
+            width: 100%;
+        }
+        &:focus {
+            border-color: #3a82c6;
+        }
+        &:disabled {
+            border-color: #e6e6e6;
+            background: #f9fafb;
+        }
+        &[required]::placeholder {
+            color: transparent;
+        }
+        &::placeholder {
+            font-size: 14px;
+            color: variables.$input-text;
+        }
+    }
+    &__input:focus + &__label,
+    &__input:valid + &__label,
+    &__input:disabled + &__label {
+        display: none;
+    }
+}
+
+.actions {
+    padding-top: 20px;
+    &__agreement {
+        max-width: 370px;
+        margin-bottom: 20px;
+    }
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &__label {
+        @include mixins.text($size: 14px, $weight: 400, $lh: normal);
+    }
+
+    &__input {
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+        font: inherit;
+        color: variables.$dark-grey;
+        min-width: 20px;
+        height: 20px;
+        border: 1.5px solid variables.$dark-grey;
+        border-radius: 0.15em;
+        transform: translateY(-0.075em);
+
+        display: grid;
+        place-content: center;
+
+        &::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            border-radius: 2px;
+            box-shadow: inset 1em 1em variables.$dark-grey;
+
+            transform-origin: bottom left;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+
+        &:checked::before {
+            transform: scale(1);
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .feedback {
+        &__image {
+            display: none;
+        }
+    }
+    .textfield {
+        width: 100%;
+    }
+
+    .actions__agreement {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,72 @@
+@use "./mixins";
+@use "./variables";
+
+.projects {
+    &__grid {
+        @include mixins.flex($gap: 20px, $direction: row, $jc: space-between);
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    &__item {
+        position: relative;
+        flex-grow: 1;
+        height: 255px;
+        cursor: pointer;
+
+        & img {
+            @include mixins.image;
+            height: 255px;
+        }
+
+        &:hover .overlay {
+            opacity: 1;
+        }
+    }
+}
+
+.overlay {
+    background-color: #333333bc;
+    @include mixins.absolute(top 0 left 0);
+    @include mixins.size(100%, 100%);
+    padding: 40px;
+    @include mixins.flex($direction: column, $ai: start, $jc: center);
+    opacity: 0;
+    transition: .3s;
+
+    &__text {
+        @include mixins.text($size: 64px, $weight: 700, $lh: 100%);
+        color: white;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+    &__link {
+        color: white;
+        @include mixins.text($size: 12px, $weight: 400, $lh: 100%);
+        text-transform: uppercase;
+        position: relative;
+        @include mixins.flex($direction: column, $jc: center);
+        width: 110px;
+
+        &:after {
+            content: url('../../img/arrow-light.svg');
+            @include mixins.absolute(top 50% right 0);
+            transform: translateY(-50%);
+        }
+    }
+}
+
+@media screen and (max-width: 560px){
+    .overlay {
+        padding: 20px;
+        &__text {
+            font-size: 50px;
+        }
+    }
+    
+}
+@media screen and (max-width: 425px){
+    .overlay__text {
+            font-size: 40px;
+        }
+}

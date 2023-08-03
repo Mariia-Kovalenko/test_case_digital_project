@@ -1,0 +1,65 @@
+@use "./mixins";
+@use "./variables";
+
+.tasks {
+    &__info {
+        @include mixins.flex(60px, row);
+    }
+}
+
+.task {
+    @include mixins.flex(30px, row, center, space-between);
+    &__number {
+        font-family: "Roboto", sans-serif;
+        font-size: 200px;
+        font-style: normal;
+        font-weight: 900;
+        color: variables.$light-grey;
+    }
+    &__text {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+
+        max-width: 420px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .task__text {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 990px){
+    .tasks__info {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .task__text {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .task {
+        &__number {
+            font-size: 150px;
+        }
+        &__text {
+            font-size: 18px;
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .task {
+        &__number {
+            font-size: 130px;
+        }
+        &__text {
+            font-size: 16px;
+        }
+    }
+}

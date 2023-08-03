@@ -1,0 +1,62 @@
+<section class="feedback">
+    <h2 class="section-heading">Связаться с нами</h2>
+    <div class="feedback__inner">
+        <form action="#" class="feedback__inputs">
+            <fieldset class="textfield textfield--light">
+                <input id="name" class="textfield__input" placeholder="Имя" />
+            </fieldset>
+            <fieldset class="textfield textfield--light">
+                <input id="phone" class="textfield__input" required />
+                <label
+                    for="phone"
+                    class="textfield__label textfield__label--required"
+                    >Номер телефона</label
+                >
+            </fieldset>
+            <fieldset class="textfield textfield--light">
+                <input id="email" class="textfield__input" required />
+                <label
+                    for="email"
+                    class="textfield__label textfield__label--required"
+                    >E-mail</label
+                >
+            </fieldset>
+            <fieldset class="textfield textfield--light">
+                <input
+                    id="service"
+                    class="textfield__input"
+                    placeholder="Интересующий товар/услуга"
+                />
+            </fieldset>
+            <fieldset class="textfield">
+                <textarea
+                    id="message"
+                    class="textfield__input textarea"
+                    required
+                ></textarea>
+                <label
+                    for="message"
+                    class="textfield__label textfield__label--required"
+                    >Сообщение</label
+                >
+            </fieldset>
+            <div class="checkbox">
+                <input
+                    class="checkbox__input"
+                    type="checkbox"
+                    checked="true"
+                    name="checkbox"
+                    checked="'true"
+                />
+                <label class="checkbox__label" htmlFor="checkbox">
+                    Отправляя заявку Вы соглашаетесь с политикой
+                    конфиденциальности
+                </label>
+            </div>
+            <button type="submit" class="btn btn-dark">ОТПРАВИТЬ</button>
+        </form>
+        <div class="feedback__image">
+            <img src="../../img/feedback.jpg" alt="feedback" />
+        </div>
+    </div>
+</section>
